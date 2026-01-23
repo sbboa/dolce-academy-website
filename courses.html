@@ -21,20 +21,48 @@
     </a>
 
     <!-- TOGGLER -->
-    <button class="navbar-toggler" type="button"
+    <button class="navbar-toggler d-lg-none" type="button"
             aria-controls="mainNav"
             aria-expanded="false"
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
+    <div class="collapse navbar-collapse d-none d-lg-flex" id="desktopNav">
+       <ul class="navbar-nav ms-auto" style="gap: 10px;"> 
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li> 
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li> 
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li> 
+        <li class="nav-item"><a class="nav-link" href="electrolysis.html">Electrolysis</a></li> 
+        <li class="nav-item d-flex align-items-center" style="gap: 12px;">
+          <a href="https://www.instagram.com/dolce_academy_sc?igsh=d3Z6aTFvYjN0aDg0" target="_blank" class="nav-link p-0">
+            <i class="bi bi-instagram" style="font-size: 1.4rem;"></i>
+          </a>
+          <a href="https://www.facebook.com/share/1KFNgKbNPV/?mibextid=wwXIfr" target="_blank" class="nav-link p-0">
+            <i class="bi bi-facebook" style="font-size: 1.4rem;"></i>
+          </a>
+        </li>
+        
+      </ul> 
+    </div>
+
 
     <!-- RIGHT-SIDE SLIDE-IN MENU -->
-    <div class="offcanvas-collapse" id="mainNav">
+    <div class="offcanvas-fullscreen" id="mainNav"> <div class="menu-close-btn" id="menuClose">&times;</div>
       <ul class="navbar-nav ms-auto" style="gap: 10px;">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
         <li class="nav-item"><a class="nav-link" href="electrolysis.html">Electrolysis</a></li>
+        <li class="nav-item mt-4 d-flex justify-content-center" style="gap: 25px;">
+          <a href="https://www.instagram.com/dolce_academy_sc?igsh=d3Z6aTFvYjN0aDg0" target="_blank" class="nav-link p-0">
+            <i class="bi bi-instagram" style="font-size: 2rem;"></i>
+          </a>
+          <a href="https://www.facebook.com/share/1KFNgKbNPV/?mibextid=wwXIfr" target="_blank" class="nav-link p-0">
+            <i class="bi bi-facebook" style="font-size: 2rem;"></i>
+          </a>
+        </li>
+        
       </ul>
     </div>
 
@@ -93,27 +121,40 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="container">Dolce Academy — Electrolysis Training — South Carolina</div>
+  <div class="container">
+    <div class="mb-2">
+      <a href="https://www.instagram.com/dolce_academy_sc?igsh=d3Z6aTFvYjN0aDg0" target="_blank" class="social-icon">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1KFNgKbNPV/?mibextid=wwXIfr" target="_blank" class="social-icon">
+        <i class="bi bi-facebook"></i>
+      </a>
+    </div>
+    © 2025 Dolce Academy — Electrolysis Training — South Carolina
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- RIGHT-SIDE MENU JS -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const toggler = document.querySelector('.navbar-toggler');
-    const offcanvas = document.querySelector('.offcanvas-collapse');
+    const offcanvas = document.getElementById('mainNav');
+    const closeBtn = document.getElementById('menuClose');
 
     toggler.addEventListener('click', function () {
-      offcanvas.classList.toggle('open');
+      offcanvas.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', function () {
+      offcanvas.classList.remove('open');
     });
   });
 </script>
 
+
 </body>
 </html>
-
 
 
